@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>calculator</title>
+
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <form class="form" style="display: inline-block;">
+            <input type="number" name="number1">
+            <select name="operation">
+                <option value="+">+</option> 
+                <option value="-">-</option> 
+                <option value="*">*</option> 
+                <option value="/">/</option> 
+            </select>
+            <input type="number" name="number2">
+            <input type="button" value="=" onclick="calculator('ok')">
+        </form>
+        <div name="result"  style="display:inline-block;">
+        </div>
+        
+        <script>
+            let n1 = document.querySelector("input[name='number1']"); // letiable outside funtion is global function
+            var n2 = document.querySelector("input[name='number2']");
+                     //Object.method()        
+            let result = document.querySelector('div[name="result"]')
+            let opertaor = document.querySelector('select[name="operation"]')
+            
+            //function defination
+            function calculator(){ //formal argument
+                // function body
+                //console.log(n1.value);
+                //console.log(n2.value);
+                var a = parseFloat(n1.value);
+                var b = parseFloat(n2.value);
+            
+                switch(opertaor.value){
+                    case "+":
+                        console.log(a+b);
+                        result.innerHTML = a+b
+                        break;
+                    case "-":
+                        console.log(a-b);
+                        result.innerHTML = a-b
+                        break;
+                    case "*":
+                        console.log(a*b);
+                        result.innerHTML = a*b
+                        break;
+                    case "/":
+                        console.log(a/b);
+                        result.innerHTML = a/b
+                        break;
+                    default:
+                        console.log('invalid')
+                }
+               // console.log(a + b);
+                console.log(result); 
+                //result.innerHTML = opertaor.value;       
+               
+                //console.log(opertaor.value);
+                //every function return something
+            }
+
+        </script>
+    </body>
+</html>
